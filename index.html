@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>르주르</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="../lib/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        $(function () {
+
+            //2차메뉴
+            $('.nav .gnb > li').mouseenter(function () {
+                //$('.depth02_wrap').slideDown();
+                $(this).find('.depth02_wrap').stop().slideDown();
+            });//gnb>li.mouseenteer()
+
+            $('.depth02_wrap').mouseleave(function () {
+                $(this).stop().slideUp();
+            });//depth02_wrap.mouseleave()
+
+            //검색창
+            $('.search img').click(function () {
+                $('.search_box').slideToggle();
+            });//search.mouseenter()
+
+            //메인이미지 슬라이드
+            var swiper = new Swiper(".main_slide", {
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+            });
+
+            //헤더스크롤
+            let header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                let scrollBar = window.scrollY
+                if (scrollBar > 0) {
+                    header.classList.add('active');
+                } else {
+                    header.classList.remove('active');
+                }
+            })//scroll
+
+            //탭메뉴 슬라이드
+            var swiper = new Swiper(".item_wrap", {
+                slidesPerView: 5, /* 화면에 보여지는 개수 */
+                spaceBetween: 30, /* 간격 */
+            });
+            var swiper = new Swiper(".item_wrap", {
+                slidesPerView: 5, /* 화면에 보여지는 개수 */
+                spaceBetween: 30, /* 아이템 간격 */
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+            //이벤트 슬라이드
+            var swiper = new Swiper(".event_slide", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+            });
+
+            //리뷰 슬라이드
+            var swiper = new Swiper(".review_wrap", {
+                slidesPerView: 3, /* 화면에 보여지는 개수 */
+                spaceBetween: 30, /* 아이템 간격 */
+                loop: true, /* 처음으로 돌아가기 */
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+            });
+
+            //공지사항 슬라이드
+            var swiper = new Swiper(".notice_slide", {
+                direction: "vertical",
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+            });
+        });//script end
+    </script>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#"><img src="img/logo.png" alt="Le Jour"></a>
+            </h1><!-- .logo end -->
+
+            <nav class="nav">
+                <ul class="gnb">
+                    <li>
+                        <a href="#" class="depth01">BRAND STORY</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="depth01">PRODUCT</a>
+                        <div class="depth02_wrap">
+                            <div class="inner">
+                                <ul class="depth02">
+                                    <li>
+                                        <a href="#">Le Jour SET</a>
+                                        <ul class="depth03">
+                                            <li><a href="#">세탁세제 & 섬유유연제</a></li>
+                                            <li><a href="#">주방용품</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Le Jour PRODUCT</a>
+                                        <ul class="depth03">
+                                            <li><a href="#">세탁세제 & 섬유유연제</a></li>
+                                            <li><a href="#">주방/탈취 용품</a></li>
+                                            <li><a href="#">욕실용품</a></li>
+                                            <li><a href="#">세탁보조제</a></li>
+                                            <li><a href="#">기프트 액세서리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Le Jour COSMETICS</a>
+                                        <ul class="depth03">
+                                            <li><a href="#">로션/크림</a></li>
+                                        </ul>
+                                    </li>
+                                </ul><!-- .depth02 end -->
+                                <div class="depth02-image">
+                                    <img src="img/header-nav-product.jpg" alt="르브르 메뉴 제품 이미지">
+                                </div><!-- .depth02-image end -->
+                            </div>
+
+                        </div><!-- .depth02-inner  end -->
+                    </li>
+
+                    <li><a href="#" class="depth01">CONTENTS</a></li>
+                    <li><a href="#" class="depth01">REVIEW</a></li>
+                    <li><a href="#" class="depth01">Q&A</a></li>
+                    <li><a href="#" class="depth01">NOTICE</a></li>
+                    <li><a href="#" class="depth01">EVENT</a></li>
+                    <li><a href="#" class="depth01">MEMBERSHIP</a></li>
+                </ul><!-- .gnb -->
+            </nav><!-- .nav nav-pc end -->
+
+            <div class="util">
+                <div class="lang-btn">
+                    <div>LANGUAGES</div>
+                    <ul>
+                        <li><a href="#">Korean</a></li>
+                        <li><a href="#">English</a></li>
+                    </ul>
+                </div><!-- lang-btn end -->
+                <ul class="user_menu">
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">JOIN</a></li>
+                    <li><a href="#">CART<img src="img/icon-cart.png" alt="장바구니"></a></li>
+                    <li class="search">
+                        <a href="#"><img src="img/icon-search.png" alt="검색하기"></a>
+                        <div class="search_box">
+                            <div class="search_box_in">
+                                <input type="text" placeholder="SEARCH">
+                                <img src="img/icon-search.png" alt="검색">
+                            </div><!-- .search_box_in end -->
+                        </div><!-- .search_box end -->
+                    </li><!-- .search end -->
+                </ul><!-- user_menu 둥 -->
+            </div><!-- .util end -->
+
+        </div>
+    </header><!-- .header end -->
+
+    <main>
+        <section class="main_visual">
+            <div class="swiper main_slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/visual-01.jpg" alt="르주르 제품 이미지 1"></div>
+                    <div class="swiper-slide"><img src="img/visual-02.jpg" alt="르주르 제품 이미지 2"></div>
+                    <div class="swiper-slide"><img src="img/visual-03.jpg" alt="르주르 제품 이미지 3"></div>
+                </div>
+            </div>
+        </section><!-- main_visual end -->
+    </main>
+
+    <section>
+        <div class="shortcut">
+            <ul>
+                <li>
+                    <a href="#">
+                        <h3>JOIN US</h3>
+                        <p>회원가입 시 적립금 2,000원을 드려요.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>REVIEW</h3>
+                        <p>리뷰를 남겨주시면 적립금을 드려요.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>CONTENTS</h3>
+                        <p>다양한 콘텐츠를 통해서 Le Jour의 따뜻함을 느껴보세요.</p>
+                    </a>
+                </li>
+            </ul>
+        </div><!-- .shortcut end -->
+
+        <div class="tabmenu">
+            <div class="inner">
+                <h2>Le Jour's selection</h2>
+                <div class="tab">
+                    <ul>
+                        <li class="active">세트</li>
+                        <li>세제</li>
+                        <li>섬유유연제</li>
+                        <li>주방/탈취 용품</li>
+                        <li>욕실용품</li>
+                        <li>세탁보조제</li>
+                        <li>로션/크림</li>
+                        <li>기프트 액세서리</li>
+                    </ul>
+                </div><!-- .tab end -->
+
+                <div class="swiper item_wrap active">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-01.jpg" alt="르주르 패밀리 세트"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Le Jour Family Set</p>
+                                    <h4>르주르 패밀리 세트</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>102,000원</span>
+                                    <strong>→ 91,800원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-02.jpg" alt="르주르 베이비 세트"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Le Jour Baby Set</p>
+                                    <h4>르주르 베이비 세트</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>53,000원</span>
+                                    <strong>→ 49,900원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-03.jpg" alt="르주르 싱글족 세트"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Le Jour Single Set</p>
+                                    <h4>르주르 싱글족 세트</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>10,2000원</span>
+                                    <strong>→ 91,800원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-04.jpg" alt="르주르 키친 세트"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Le Jour Kitchen Set</p>
+                                    <h4>르주르 키친 세트</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>32,000원</span>
+                                    <strong>→ 30,000원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-05.jpg" alt="르주르 키친 세트"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Le Jour Single Set(500ml)</p>
+                                    <h4>르주르 싱글족 세트(500ml)</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>36,500원</span>
+                                    <strong>→ 33,500원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .item end -->
+
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-06.jpg" alt="플레인 베이비 세트"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Plain Baby Set</p>
+                                    <h4>플레인 베이비 세트</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>53,000원</span>
+                                    <strong>→ 49,000원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-07.jpg" alt="플레인 베이비 세트(무향)"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Plain Baby Set(Unscented)</p>
+                                    <h4>플레인 베이비 세트(무향)</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>53,000원</span>
+                                    <strong>→ 49,000원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-08.jpg" alt="소프트 패밀리 세트"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Soft Family Set</p>
+                                    <h4>소프트 패밀리 세트</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>102,000원</span>
+                                    <strong>→ 91,800원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-09.jpg" alt="소프트 베이비 세트"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Soft Baby Set</p>
+                                    <h4>소프트 베이비 세트</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>53,000원</span>
+                                    <strong>→ 49,000원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image">
+                                <div class="photo_box">
+                                    <a href="#"><img src="img/tab-10.jpg" alt="소프트 베이비 세트"></a>
+                                </div><!-- .photo end -->
+                                <div class="icon_box">
+                                    <img src="img/best.png" alt="best">
+                                    <img src="img/sale.png" alt="sale">
+                                </div><!-- .icon end -->
+                                <div class="link_box">
+                                    <a href="#" class="buynow">
+                                        <img src="img/icon_card.png" alt="카드">
+                                        <img src="img/icon_card_w.png" alt="흰색 카드">
+                                        <span>바로구매</span>
+                                    </a><!-- .buynow end -->
+                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
+                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
+                                </div><!-- .link_box end -->
+                            </div><!-- .image end -->
+                            <div class="text">
+                                <div class="name">
+                                    <p>Soft Single Set</p>
+                                    <h4>소프트 싱글족 세트</h4>
+                                </div><!-- .name end -->
+                                <div class="price">
+                                    <span>49,000원</span>
+                                    <strong>→ 45,000원</strong>
+                                </div><!-- .price end -->
+                            </div><!-- .text end -->
+                        </div><!-- .swiper-slide end -->
+                    </div><!-- .swiper-wrapper end -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div><!-- .item_wrap end -->
+
+                <button type="button" class="more_view">MORE VIEW</button><!-- .more_view end -->
+            </div><!-- .inner end -->
+        </div><!-- .tabmenu end -->
+
+        <div class="event">
+            <h2>Event</h2>
+            <div class="event_inner">
+                <div class="swiper event_slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="img/event-01.jpg" alt="이벤트1"></div>
+                        <!-- .swiper-slide end -->
+                        <div class="swiper-slide"><img src="img/event-02.jpg" alt="이벤트2"></div>
+                        <!-- .swiper-slide end -->
+                        <div class="swiper-slide"><img src="img/event-03.jpg" alt="이벤트3"></div>
+                        <!-- .swiper-slide end -->
+                    </div><!-- .swiper-wrapper end -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div><!-- .event_slide end -->
+            </div><!-- .event_inner end -->
+        </div><!-- .event end -->
+
+        <div class="review">
+            <h2>Review</h2>
+            <div class="review_inner">
+                <div class="swiper review_wrap">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/review-01.png" alt="리뷰1">
+                                </div><!-- .image end -->
+                                <div class="text_box">
+                                    <div class="review_text">
+                                        <p>빠른 배송 잘 받았습니다^^ 아직 사용전이라 향기는 확인 못했지만, 포장 푸니까 어느정도 ...</p>
+                                    </div><!-- .text end -->
+                                    <div class="info_text">
+                                        <div class="name">
+                                            <p>LE Jour Filter sheets(Sylve)</p>
+                                            <h3>리주르 필터 시트(쉴브)</h3>
+                                        </div><!-- .name end -->
+                                        <div class="star">
+                                            <img src="img/star-fill.png" alt="별다섯개">
+                                        </div><!-- .star end -->
+                                    </div><!-- .info_text end -->
+                                </div><!-- .text_box end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/review-02.png" alt="리뷰2">
+                                </div><!-- .image end -->
+                                <div class="text_box">
+                                    <div class="review_text">
+                                        <p>선물 주기 너무 좋아요 💙 감성 한스푼 ㅠㅠ</p>
+                                    </div><!-- .text end -->
+                                    <div class="info_text">
+                                        <div class="name">
+                                            <p>LE Jour Filter single set</p>
+                                            <h3>리주르 싱글족 세트</h3>
+                                        </div><!-- .name end -->
+                                        <div class="star">
+                                            <img src="img/star-fill.png" alt="별다섯개">
+                                        </div><!-- .star end -->
+                                    </div><!-- .info_text end -->
+                                </div><!-- .text_box end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/review-03.png" alt="리뷰3">
+                                </div><!-- .image end -->
+                                <div class="text_box">
+                                    <div class="review_text">
+                                        <p>이뻐용 ㅎㅎㅎ 선물할땜 필수죠!!!</p>
+                                    </div><!-- .text end -->
+                                    <div class="info_text">
+                                        <div class="name">
+                                            <p>Le Jour shopping bag</p>
+                                            <h3>르주르 쇼핑백</h3>
+                                        </div><!-- .name end -->
+                                        <div class="star">
+                                            <img src="img/star-fill.png" alt="별다섯개">
+                                        </div><!-- .star end -->
+                                    </div><!-- .info_text end -->
+                                </div><!-- .text_box end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/review-04.png" alt="리뷰4">
+                                </div><!-- .image end -->
+                                <div class="text_box">
+                                    <div class="review_text">
+                                        <p>르주르 주방세제는 처음 구매했는데 세척도 잘 되고 너무 좋네요 :) 용기도 예뻐서 주방...</p>
+                                    </div><!-- .text end -->
+                                    <div class="info_text">
+                                        <div class="name">
+                                            <p>Le Jour dish washing detergent</p>
+                                            <h3>르주르 주방세제</h3>
+                                        </div><!-- .name end -->
+                                        <div class="star">
+                                            <img src="img/star-fill.png" alt="별다섯개">
+                                        </div><!-- .star end -->
+                                    </div><!-- .info_text end -->
+                                </div><!-- .text_box end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="image">
+                                    <img src="img/review-05.png" alt="리뷰5">
+                                </div><!-- .image end -->
+                                <div class="text_box">
+                                    <div class="review_text">
+                                        <p>첫째 애기때부터 (2016년) 쭉 쓰던 거예요🤍</p>
+                                    </div><!-- .text end -->
+                                    <div class="info_text">
+                                        <div class="name">
+                                            <p>Le Jour baby set</p>
+                                            <h3>르주르 베이비 세트</h3>
+                                        </div><!-- .name end -->
+                                        <div class="star">
+                                            <img src="img/star-fill.png" alt="별다섯개">
+                                        </div><!-- .star end -->
+                                    </div><!-- .info_text end -->
+                                </div><!-- .text_box end -->
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                    </div><!-- .swiper-wrapper end -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div><!-- .review_wrap end -->
+            </div><!-- .review_wrap end -->
+        </div><!-- .review end -->
+
+        <div class="insta">
+            <h2>#Instagram</h2>
+            <div class="insta_wrap">
+                <ul>
+                    <li><a href="#"><img src="img/insta-01.png" alt="인스타그램1"></a></li>
+                    <li><a href="#"><img src="img/insta-02.jpg" alt="인스타그램2"></a></li>
+                    <li><a href="#"><img src="img/insta-03.jpg" alt="인스타그램3"></a></li>
+                    <li><a href="#"><img src="img/insta-04.jpg" alt="인스타그램4"></a></li>
+                    <li><a href="#"><img src="img/insta-05.jpg" alt="인스타그램5"></a></li>
+                    <li><a href="#"><img src="img/insta-06.jpg" alt="인스타그램6"></a></li>
+                </ul>
+            </div><!-- .insta_wrap end -->
+        </div><!-- .instagram end -->
+
+        <div class="notice">
+            <div class="notice_inner">
+                <div class="text_box">
+                    <div class="text_slide">
+                        <div class="title">
+                            <h2>Notice</h2>
+                        </div><!-- .title end -->
+                        <div class="slide_wrap">
+                            <div class="swiper notice_slide">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 오프라인 입점 안내</a></li>
+                                    <li class="swiper-slide"><a href="#">[NOTICE] ★ Le Jour Scent Archiving</a></li>
+                                    <li class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 카카오톡 플러스 친구 추가 EVENT</a></li>
+                                    <li class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 필터 시트 샘플 파우치 제공 이벤트 안내</a></li>
+                                    <li class="swiper-slide"><a href="#">[NOTICE] ★ 택배비 인상 안내</a></li>
+                                    <li class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 홈페이지 리뉴얼로 인한 안내사항</a></li>
+                                    <li class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 대한아토피협회 추천 제품으로 선정</a></li>
+                                    <li class="swiper-slide"><a href="#">[NOTICE] ★ 르주르 오프라인 입점 안내</a></li>
+                                    <li class="swiper-slide"><a href="#">[NOTICE] ★ Le Jour Scent Archiving</a></li>
+                                </ul>
+                            </div><!-- .notice_slide end -->
+                        </div><!-- .slide_wrap end -->
+                    </div><!-- .text_slide end -->
+                    <div class="info">
+                        <div class="cs_box">
+                            <div class="title">
+                                <h4>고객센터</h4>
+                            </div><!-- .title end -->
+                            <div class="num">
+                                <strong>1522-8625</strong>
+                            </div><!-- .num end -->
+                            <div class="cs_hour">
+                                <p>운영시간<span>AM 10:00 ~ PM 06:00(주말 및 공휴일 휴무)</span></p>
+                                <p>점심시간<span>AM 12:00 ~ PM 01:00</span></p>
+                            </div><!-- .cs_hour end -->
+                        </div><!-- .cs_box end -->
+                        <div class="ac_box">
+                            <div class="title">
+                                <h4>계좌안내</h4>
+                            </div><!-- .title end -->
+                            <div class="num">
+                                <strong>국민 670701-04-220781</strong>
+                            </div><!-- .num end -->
+                            <div class="name">
+                                <p>예금주 르주르(주)</p>
+                            </div><!-- .name end -->
+                            <div class="ac_btn">
+                                <button type="button" class="qa">Q&A</button><!-- .qa end -->
+                                <button type="button" class="faq">FAQ</button><!-- .faq end -->
+                            </div><!-- .ac_btn end -->
+                        </div><!-- .ac_box end -->
+                    </div><!-- .info end -->
+                </div><!-- .text end -->
+                <div class="image">
+                    <a href="#"><img src="img/notice.png" alt="프로덕트 가이드"></a>
+                </div><!-- .imag end -->
+            </div><!-- .text_box end -->
+        </div><!-- .notice end -->
+    </section>
+</body>
+
+</html>
