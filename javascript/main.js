@@ -61,6 +61,25 @@ $(function () {
             prevEl: ".swiper-button-prev",
         },
     });
+    
+    window.onload = () => {
+        let tabMenu = document.querySelectorAll('.tabmenu ul li')
+        let itemWrap = document.querySelectorAll('.tabmenu .item_wrap');
+
+        for(let i = 0; i < tabMenu.length; i++) {
+            tabMenu[i].addEventListener('click', () => {
+                tabMenu.forEach(item => {
+                    item.classList.remove('active');
+                });
+                tabMenu[i].classList.add('active');
+
+                itemWrap.forEach(item => {
+                    item.classList.remove('active');
+                });
+                itemWrap[i].classList.add('active');
+            });//tabMenu.click()
+        }
+       };//script end
 
     //이벤트 슬라이드
     var swiper = new Swiper(".event_slide", {

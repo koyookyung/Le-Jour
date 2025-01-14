@@ -10,26 +10,6 @@
     <script src="../lib/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="javascript/main.js"></script>
-    <script>
-       window.onload = () => {
-        let tabMenu = document.querySelectorAll('.tabmenu ul li')
-        let itemWrap = document.querySelectorAll('.tabmenu .item_wrap');
-
-        for(let i = 0; i < tabMenu.length; i++) {
-            tabMenu[i].addEventListener('click', () => {
-                tabMenu.forEach(item => {
-                    item.classList.remove('active');
-                });
-                tabMenu[i].classList.add('active');
-
-                itemWrap.forEach(item => {
-                    item.classList.remove('active');
-                });
-                itemWrap[i].classList.add('active');
-            });//tabMenu.click()
-        }
-       };//script end
-    </script>
 
 
 </head>
@@ -575,64 +555,6 @@
                                 </div><!-- .name end -->
                                 <div class="price">
                                     <strong>28,000원</strong>
-                                </div><!-- .price end -->
-                            </div><!-- .text end -->
-                        </div><!-- .swiper-slid end -->
-
-                        <div class="swiper-slide">
-                            <div class="image">
-                                <div class="photo_box">
-                                    <a href="#"><img src="img/tab2-04.png" alt="르주르 일반 가루세제"></a>
-                                </div><!-- .photo end -->
-                                <div class="icon_box">
-                                    <img src="img/best.png" alt="best">
-                                </div><!-- .icon end -->
-                                <div class="link_box">
-                                    <a href="#" class="buynow">
-                                        <img src="img/icon_card.png" alt="카드">
-                                        <img src="img/icon_card_w.png" alt="흰색 카드">
-                                        <span>바로구매</span>
-                                    </a><!-- .buynow end -->
-                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
-                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
-                                </div><!-- .link_box end -->
-                            </div><!-- .image end -->
-                            <div class="text">
-                                <div class="name">
-                                    <p>Le Jour Washing Powder For Adult</p>
-                                    <h4>르주르 일반 가루세제</h4>
-                                </div><!-- .name end -->
-                                <div class="price">
-                                    <strong>19,000원</strong>
-                                </div><!-- .price end -->
-                            </div><!-- .text end -->
-                        </div><!-- .swiper-slid end -->
-
-                        <div class="swiper-slide">
-                            <div class="image">
-                                <div class="photo_box">
-                                    <a href="#"><img src="img/tab2-05.png" alt="르주르 유아 가루세제"></a>
-                                </div><!-- .photo end -->
-                                <div class="icon_box">
-                                    <img src="img/best.png" alt="best">
-                                </div><!-- .icon end -->
-                                <div class="link_box">
-                                    <a href="#" class="buynow">
-                                        <img src="img/icon_card.png" alt="카드">
-                                        <img src="img/icon_card_w.png" alt="흰색 카드">
-                                        <span>바로구매</span>
-                                    </a><!-- .buynow end -->
-                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
-                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
-                                </div><!-- .link_box end -->
-                            </div><!-- .image end -->
-                            <div class="text">
-                                <div class="name">
-                                    <p>Le Jour Washing Powder For Baby</p>
-                                    <h4>르주르 유아 가루세제</h4>
-                                </div><!-- .name end -->
-                                <div class="price">
-                                    <strong>18,000원</strong>
                                 </div><!-- .price end -->
                             </div><!-- .text end -->
                         </div><!-- .swiper-slid end -->
@@ -1369,67 +1291,6 @@
 
                 <div class="swiper item_wrap">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="image">
-                                <div class="photo_box">
-                                    <a href="#"><img src="img/tab6-01.png" alt="르주르 세탁기 클렌저"></a>
-                                </div><!-- .photo end -->
-                                <div class="icon_box">
-                                    <img src="img/best.png" alt="best">
-                                    <img src="img/1-1.png" alt="1+1">
-                                </div><!-- .icon end -->
-                                <div class="link_box">
-                                    <a href="#" class="buynow">
-                                        <img src="img/icon_card.png" alt="카드">
-                                        <img src="img/icon_card_w.png" alt="흰색 카드">
-                                        <span>바로구매</span>
-                                    </a><!-- .buynow end -->
-                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
-                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
-                                </div><!-- .link_box end -->
-                            </div><!-- .image end -->
-                            <div class="text">
-                                <div class="name">
-                                    <p>Le Jour Washing Machine Cleanser</p>
-                                    <h4>르주르 세탁기 클렌저</h4>
-                                </div><!-- .name end -->
-                                <div class="price">
-                                    <strong>13,000원</strong>
-                                </div><!-- .price end -->
-                            </div><!-- .text end -->
-                        </div><!-- .swiper-slid end -->
-
-                        <div class="swiper-slide">
-                            <div class="image">
-                                <div class="photo_box">
-                                    <a href="#"><img src="img/tab6-02.png" alt=" 르주르 삶는 클리닝"></a>
-                                </div><!-- .photo end -->
-                                <div class="icon_box">
-                                    <img src="img/best.png" alt="best">
-                                    <img src="img/sale.png" alt="sale">
-                                </div><!-- .icon end -->
-                                <div class="link_box">
-                                    <a href="#" class="buynow">
-                                        <img src="img/icon_card.png" alt="카드">
-                                        <img src="img/icon_card_w.png" alt="흰색 카드">
-                                        <span>바로구매</span>
-                                    </a><!-- .buynow end -->
-                                    <button type="button" class="cart"><span>장바구니</span></button><!-- .cart end -->
-                                    <button type="button" class="heart"><span>찜</span></button><!-- .cart end -->
-                                </div><!-- .link_box end -->
-                            </div><!-- .image end -->
-                            <div class="text">
-                                <div class="name">
-                                    <p>Le Jour Boil-Wash Cleaning</p>
-                                    <h4>르주르 삶는 클리닝</h4>
-                                </div><!-- .name end -->
-                                <div class="price">
-                                    <span>14,000원</span>
-                                    <strong>→ 9,800원</strong>
-                                </div><!-- .price end -->
-                            </div><!-- .text end -->
-                        </div><!-- .swiper-slid end -->
-
                         <div class="swiper-slide">
                             <div class="image">
                                 <div class="photo_box">
